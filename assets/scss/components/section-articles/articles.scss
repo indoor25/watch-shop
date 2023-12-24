@@ -1,0 +1,113 @@
+@use "../../mixins/index" as *;
+@use "../../presets/index" as *;
+
+
+.articles {
+  position: relative;
+  margin-bottom: 90px;
+
+  &__title {
+    @extend %title;
+    margin-bottom: 55px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.57em;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+}
+
+.article {
+  margin-bottom: 35px;
+  display: grid;
+  gap: $gap;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  justify-items: center;
+
+  & img {
+    width: calc($index * 33);
+  }
+
+  &__content {
+    margin-top: 55px;
+    max-width: 630px;
+  }
+
+  &__title {
+    margin-bottom: 15px;
+    font-size: 1.28em;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    margin-bottom: 40px;
+    line-height: 1.5em;
+  }
+
+  &__content-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+  }
+
+  &__content-keyword {
+    font-size: 1.28em;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+  }
+}
+
+//media
+@include xl-lg {
+  .article {
+    align-items: center;
+  }
+}
+
+@include lg {
+  .article {
+    grid-template-columns: 1fr;
+
+    &__content {
+      max-width: 99%;
+    }
+
+    & img {
+      width: 95%;
+    }
+  }
+
+}
+
+@include lg {
+  .article {
+    &__content {
+      &-keyword {
+        margin-bottom: 20px;
+      }
+
+      &-bottom {
+        flex-direction: column-reverse;
+      }
+    }
+  }
+}
+
+@include md {
+  .article {
+    &__content {
+      //max-width: 99%;
+    }
+  }
+}
+

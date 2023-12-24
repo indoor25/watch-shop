@@ -1,0 +1,92 @@
+@use "../mixins/index" as *;
+@use "../presets/index" as *;
+
+.container {
+  @extend %container;
+  max-width: 1920px;
+}
+
+.wrapper {
+  @extend %container;
+  max-width: 1130px;
+}
+
+.active {
+  display: block;
+}
+
+.product {
+  &__cart {
+    font-family: $font-second;
+  }
+
+  &__bg-img {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    height: calc($index * 10.8);
+    width: calc($index * 8.7);
+    margin-bottom: 25px;
+    background-color: $color-gray-dark;
+
+  }
+
+  &__img, &__bg-img img {
+    height: calc($index * 8.8);
+    width: calc($index * 7.2);
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+
+  &__name {
+    margin-bottom: 10px;
+    font-size: 1.29em;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__price {
+    font-size: 1.14em;
+    font-weight: 700;
+    color: $color-gray-light;
+  }
+}
+
+.btn {
+  width: max-content;
+  display: block;
+  padding: 12px 28px;
+  font-family: $font-second;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  border: 1px solid $color-main;
+}
+
+
+//media
+@include xl-lg {
+  .product {
+    &__bg-img {
+      margin-bottom: 5px;
+    }
+
+    &__name {
+      margin-bottom: 5px;
+    }
+  }
+
+  .btn {
+    font-size: 1.142em;
+    padding: 8px 15px;
+  }
+}
+
+
+@include lg-sm {
+  .btn {
+    font-size: 1em;
+    padding: 6px 13px;
+  }
+}

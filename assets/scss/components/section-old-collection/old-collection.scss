@@ -1,0 +1,117 @@
+@use "../../mixins/index" as *;
+@use "../../presets/index" as *;
+
+
+.old {
+  &__collect {
+    width: 100%;
+    min-height: calc($index * 20);
+    margin-bottom: 120px;
+    display: flex;
+    gap: $gap;
+    position: relative;
+  }
+
+  &__collect-img img {
+    width: calc($index * 30);;
+  }
+
+  &__collect-wrapper {
+    width: 100%;
+    display: grid;
+    justify-items: center;
+    align-content: center;
+  }
+
+  &__collect-title {
+    @extend %title;
+    font-size: 2.57em;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  &__collect-text {
+    max-width: 630px;
+    margin-bottom: 65px;
+    font-style: normal;
+    line-height: 1.5em;
+    text-align: center;
+  }
+}
+
+//media
+
+@include ul-xl {
+  .old {
+    &__collect-title {
+      &:after {
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+    }
+
+    &__collect-text {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@include xl-lg {
+  .old {
+    &__collect {
+      margin-top: 100px;
+      //align-items: flex-end;
+
+      &-title {
+        position: absolute;
+        top: -80px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 2em;
+
+        &:after {
+          margin-top: 20px;
+          margin-bottom: 20px;
+        }
+      }
+
+      &-text {
+        margin-bottom: 30px;
+      }
+
+      &-img img {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+@include lg {
+
+  .old {
+    &__collect {
+      margin-top: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      &-title {
+
+
+        &:after {
+
+        }
+      }
+
+      &-text {
+
+      }
+
+      &-img img {
+        width: 100%;
+      }
+    }
+  }
+
+}

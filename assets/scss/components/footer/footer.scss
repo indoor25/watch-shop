@@ -1,0 +1,168 @@
+@use "../../mixins/index" as *;
+@use "../../presets/index" as *;
+
+
+.footer {
+  min-height: 500px;
+  width: 100%;
+  background: url("../img/bg-footer.png") no-repeat center;
+  background-size: cover;
+  background-position-y: -50px;
+
+  &__top {
+    min-height: 450px;
+    display: grid;
+    align-content: center;
+    grid-template-areas: 'ar1 ar2 ar3';
+  }
+
+  &__nav {
+
+  }
+
+  &__list {
+    width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 6px;
+  }
+
+  &__list-item {
+  }
+
+  &__list-link {
+    display: block;
+    width: fit-content;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    line-height: 1.5em;
+    color: $color-gray-light;
+    background-color: $color-black;
+  }
+
+  &__bottom {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $color-gray-light;
+    line-height: normal;
+
+    & a {
+      text-decoration: underline;
+    }
+  }
+
+}
+
+.about__title, .cat__title, .subscribe__title {
+  margin-bottom: 40px;
+  font-family: $font-second;
+  font-size: 1.71em;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.about {
+  grid-area: ar1;
+  padding: 10px;
+
+  &__text {
+    line-height: 1.5em;
+  }
+}
+
+.cat {
+  grid-area: ar2;
+  padding: 10px;
+
+  &__title {
+  }
+}
+
+.subscribe {
+  grid-area: ar3;
+  padding: 10px;
+
+  &__title {
+  }
+
+  &__text {
+    margin-bottom: 25px;
+    line-height: 1.5em;
+  }
+
+  &__form {
+
+    & form {
+      display: flex;
+      align-items: center;
+    }
+
+    & input {
+      height: 42px;
+      width: 210px;
+      border: none;
+      outline: none;
+      @include bg-color($color-gray, 0.4)
+    }
+
+    & input:focus {
+      color: $color-gray-light;
+    }
+  }
+
+  &__btn {
+    display: inline-block;
+    width: fit-content;
+    height: fit-content;
+    margin: 0;
+    padding: 10px 20px;
+    line-height: 1.5em;
+    color: $color-main;
+    background-color: $color-black;
+    letter-spacing: 0.7px;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+.copyright {
+}
+
+
+//media
+@include lg-md {
+  .footer {
+    &__top {
+      grid-template-areas:
+        'ar1 ar1'
+         'ar2 ar3';
+    }
+  }
+  .about {
+    &__title {
+      text-align: center;
+    }
+  }
+}
+
+@include md {
+  .footer {
+    &__top {
+      grid-template-areas:
+         'ar1'
+         'ar2'
+         'ar3';
+
+    }
+  }
+  .about {
+    &__title {
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+@use "sass:math";
+
+$font-header: "Post No Bills Jaffna", sans-serif;
+$font-second: "Playfair Display", serif;
+$font-main: "PT Sans", sans-serif;
+$font-size: 14px;
+
+$index: calc(1vh + 1vw);
+$ul: 1340px;
+$xl: 1200px;
+$lg: 992px;
+$md: 768px;
+$sm: 375px;
+
+$gap: 10px;
+$gap-sm: math.div($gap, 2);
+$gap-lg: $gap * 1.5;
+$gap-x2: $gap * 2;
+$gap-x2: $gap * 2;
+$gap-x3: $gap * 3;
+$gap-x4: $gap * 4;
+$gap-x5: $gap * 5;
+$gap-x7: $gap * 7;
+$gap-x10: $gap * 10;
+
+

@@ -1,0 +1,172 @@
+@use "../../mixins/index" as *;
+@use "../../presets/index" as *;
+
+
+.new {
+  &__collect {
+    height: calc(1vw * 38);
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'ar1 ar2';
+    gap: $gap;
+    justify-content: space-between;
+  }
+
+  &__items {
+    height: 100%;
+    width: 100%;
+    grid-area: ar1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__items-title {
+    @extend %title;
+    font-size: 2.58em;
+    font-weight: 700;
+  }
+
+  &__catalog {
+    height: 100%;
+    width: 100%;
+    grid-area: ar2;
+    display: grid;
+    justify-content: center;
+    align-content: end;
+    background: url('../img/img-colection-2022.png') no-repeat;
+    background-size: cover;
+
+    &-wrapper {
+      height: 150px;
+      width: 380px;
+      margin-bottom: 100px;
+      display: grid;
+      justify-items: center;
+    }
+  }
+
+  &__catalog-title {
+    @extend %title;
+    font-size: 2.58em;
+    font-weight: 700;
+  }
+}
+
+.swiper {
+  width: calc($index * 30);
+}
+
+// media
+
+@include xl {
+  .new {
+    &__items-title {
+      font-size: 2em;
+
+      &:after {
+        margin-top: 25px;
+        margin-bottom: 25px;
+      }
+    }
+  }
+}
+
+@include lg {
+
+  .new {
+    &__collect {
+      height: 100%;
+      margin-top: 30px;
+      display: grid;
+      grid-template-areas: 'ar1 ar1' 'ar2 ar2';
+
+      &-product {
+        & .product__bg-img {
+          height: calc($index * 14);
+          width: calc($index * 11);
+        }
+
+        & .product__bg-img img {
+          height: calc($index * 9);
+          width: calc($index * 8);
+        }
+      }
+    }
+
+    &__items {
+
+    }
+
+    &__items-title {
+    }
+
+    &__catalog {
+      height: 80vw;
+
+      &-wrapper {
+
+      }
+    }
+
+    &__catalog-title {
+
+    }
+  }
+
+  .swiper {
+    width: calc(100% - ($index * 12))
+  }
+}
+
+@include md {
+  .new {
+
+  }
+  .swiper {
+    width: calc(100% - ($index * 8))
+  }
+}
+
+@include sm {
+  .swiper {
+    width: calc(100% - ($index * 13))
+  }
+
+  .new {
+    &__collect {
+
+      &-product {
+        & .product__bg-img {
+          height: calc($index * 18);
+          width: calc($index * 15);
+        }
+
+        & .product__bg-img img {
+          height: calc($index * 14);
+          width: calc($index * 11);
+        }
+      }
+    }
+
+    &__items {
+
+    }
+
+    &__items-title {
+    }
+
+    &__catalog {
+
+      &-wrapper {
+
+      }
+    }
+
+    &__catalog-title {
+
+    }
+  }
+}

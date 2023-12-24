@@ -1,0 +1,62 @@
+@use "../../mixins/index" as *;
+@use "../../presets/index" as *;
+
+.partners {
+  &__title {
+    margin: 0 auto 70px auto;
+    @extend %title;
+    font-size: 2.78em;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+}
+
+.brands {
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: center;
+  column-gap: $gap-x2;
+
+  &__item img {
+    width: fit-content;
+    height: 157px;
+  }
+}
+
+
+//media
+
+@include ul-xl {
+  .brands {
+    &__item img {
+      height: calc($index * 6.5);
+    }
+  }
+}
+
+@include xl-lg {
+  .brands {
+    &__item img {
+      height: calc($index * 6);
+    }
+  }
+}
+
+@include lg-md {
+  .brands {
+    &__item img {
+      height: calc($index * 5);
+    }
+  }
+}
+
+@include lg {
+  .brands {
+    flex-wrap: wrap;
+
+    &__item img {
+      height: calc($index * 10);
+    }
+  }
+}
