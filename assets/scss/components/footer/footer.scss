@@ -165,4 +165,9 @@
       text-align: center;
     }
   }
+  .subscribe {
+    &__form input {
+      width: 200px;
+    }
+  }
 }

@@ -89,7 +89,11 @@
 @include xl {
   $hpcb: 285px;
   $wpcb: 220px;
-  .new_product-cart {
+  .new_product {
+    &-title {
+      font-size: 2em;
+    }
+
     & .product__bg-img {
       height: $hpcb;
       width: $wpcb;
